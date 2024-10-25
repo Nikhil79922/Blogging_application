@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <%- include('partials/header.ejs') %>
+</head>
+<body> 
+    <%- include('partials/navbar.ejs') %>
+       <div class="container mt-3">
+        <form action="/blog" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Upload your file</label>
+            <input class="form-control" type="file" id="formFile" name="file"> <!-- Add name="file" -->
+          </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">Title:-</label>
+            <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleTextarea" class="form-label">Body:-</label>
+            <textarea class="form-control" id="exampleTextarea" name="body" rows="4" placeholder="Enter your message here..."></textarea> <!-- Add name="body" -->
+          </div>
+          <button type="submit" class="btn btn-primary ms-3">Submit</button>
+        </form>
+        
+       </div>
+    <%- include('partials/scripts.ejs') %>
+</body>
+</html>

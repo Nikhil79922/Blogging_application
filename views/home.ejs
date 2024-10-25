@@ -6,8 +6,20 @@
     <title>Blogging App</title>
     <%- include('partials/header.ejs') %>
 </head>
-<body>
-    <%- include('navbar.ejs') %>
+<body> 
+    <%- include('partials/navbar.ejs') %>
+    <div class="container mt-3 d-flex flex-wrap gap-3 "  >
+        <% blogs.forEach(blog => { %>
+            <div class="card border border-dark" style="width: 16.5rem;">
+                <img src="<%=blog.profileImage%>" class="card-img-top" alt="..." height="170">
+                <div class="card-body">
+                  <h5 class="card-title"><%= blog.title %></h5>
+
+                  <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+                </div>
+              </div>
+        <% }) %>
+    </div>
     <%- include('partials/scripts.ejs') %>
 </body>
 </html>

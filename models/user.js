@@ -14,8 +14,17 @@ const Schema= new mongoose.Schema({
         type:String,
         required:true,
     },
+    profileImage:{
+        type:String,
+        default:"/image/userAvatar.png"
+    },
+    role:{
+        type:String,
+        enum:["USER","ADMIN"],
+        default:"USER",
+    }
 })
-const User=mongoose.Model(users,Schema)
+const User=mongoose.model("users",Schema)
 module.exports=User
 
 
