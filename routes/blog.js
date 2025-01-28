@@ -42,7 +42,6 @@ routes.post("/", tokenVerification, upload.single("file"), async (req, res) => {
 routes.get("/:id", tokenVerification, async (req, res) => {
   const blog = await Blog.findById(req.params.id).populate("createdBy")
   const comments =await Comment.find({blogId:req.params.id}).populate("createdBy")
-  console.log(comments)
   return res.render("blog", {
     success: true,
     name: req.user.name,
